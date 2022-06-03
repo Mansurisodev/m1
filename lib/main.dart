@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project1/pages/app_bar.dart';
 import 'package:project1/pages/detail_page.dart';
 import 'package:project1/pages/home_page.dart';
+import 'package:project1/pages/rasm_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         HomePage.id: (context) => HomePage(),
         DetailPage.id: (context) => DetailPage(input: 'Hello',),
         AppBarr.id: (context) => AppBarr(),
+        RasmPage.id: (context) => RasmPage(),
       },
     );
   }

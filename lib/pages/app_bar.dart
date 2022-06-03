@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project1/pages/rasm_page.dart';
 
 class AppBarr extends StatefulWidget {
   // const AppBarr({Key? key}) : super(key: key);
@@ -30,13 +31,19 @@ class _AppBarrState extends State<AppBarr> {
       ),
 
       body:  Center(
-        child: Text("Hello App Bar Page" + count.toString(), //Floatingactionbton ichidagi count qiymatini ozgartiradi.
-                    style: const TextStyle(
-                    color: Colors.red, // Rang Berish
-                    fontSize: 25 , // Kattaligi
-                    fontWeight: FontWeight.bold, // Qalin qilish
+        child: FlatButton(
+          color: Colors.teal,
+          onPressed: (){
+            Navigator.pushNamed(context, RasmPage.id);
+          },
+          child: Text("Hello App Bar Page" + count.toString(), //Floatingactionbton ichidagi count qiymatini ozgartiradi.
+            style: const TextStyle(
+              color: Colors.red, // Rang Berish
+              fontSize: 25 , // Kattaligi
+              fontWeight: FontWeight.bold, // Qalin qilish
 
             ),
+          ),
         ),
       ),
 
