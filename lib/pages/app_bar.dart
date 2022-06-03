@@ -10,20 +10,45 @@ class AppBarr extends StatefulWidget {
 }
 
 class _AppBarrState extends State<AppBarr> {
+   int count = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Title"),
-        centerTitle: true, // Androiddatitleni centrga ko'chiradi.
-        actions: const [
-          Icon(Icons.add_shopping_cart), // Appabarga Icons joylash
-          SizedBox(width: 10,), // Yopishgan joyini surish
-          Icon(Icons.notifications), // Hologanch Icon joylash mumkin ekan
-          SizedBox(width: 14,),
+        backgroundColor: Colors.blue[700],
+        centerTitle: true, // Androiddda title chap yoki ong tarafda boladi.Iphoneda esa centrda.Titleni centrga chiqarish.Android uchun.
+        actions: const [  //👈 Ong tarafdan chap tarafga itaradi!
+          Icon(Icons.notifications),
+          SizedBox(width: 16.0,),
+          Icon(Icons.add_shopping_cart),
+          SizedBox(width: 16.0,),
+          Icon(Icons.email),
+          SizedBox(width: 16.0,), // Icon ong tarafga yopishib qolgan bolsa suradi.
+
         ],
       ),
-      body: Text("Helo Holo !"),
+
+      body:  Center(
+        child: Text("Hello App Bar Page" + count.toString(), //Floatingactionbton ichidagi count qiymatini ozgartiradi.
+                    style: const TextStyle(
+                    color: Colors.red, // Rang Berish
+                    fontSize: 25 , // Kattaligi
+                    fontWeight: FontWeight.bold, // Qalin qilish
+
+            ),
+        ),
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+         setState(() {  // Bu qiymatni o'zgartiruvchi function
+           count++;
+         });
+        }, // Busiz buttonlar yozib bo'lmaydi.Ishlatmasak ham bolishi kerak
+        elevation: 10.0,
+        child:  Icon(Icons.add),
+      ),
 
     );
   }

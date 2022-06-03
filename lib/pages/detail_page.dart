@@ -32,7 +32,8 @@ class _DetailPageState extends State<DetailPage> {
             // Navigator.pushNamed(context, AppBarr.id); //Bosganda boshqa pagega o'tadi.Yo'lini ko'rsatish kerak.Orqasidagi pagelar saqlanib qoladi.
             // Navigator.pushReplacementNamed(context, HomePage.id); // O'zidan oldingi Pagelarni Yopib qo'yadi.O'zi asosiy page bo'lib oladi.Bu asosan qaytarishda emas
             // Bosganda boshqa pajega o'tishda va osha pageni asosiy qilishda ishlatiladi.Orga emas oldinga ko'proq ishlatilad.
-              Navigator.of(context).pop({"data" : "The best time evry day !"});
+            //   Navigator.of(context).pop({"data" : "The best time evry day !"});
+            Navigator.pushNamed(context, AppBarr.id);
           },
           color: Colors.red,
           child: Text(widget.input),
